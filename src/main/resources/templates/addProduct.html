@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="addProduct.css">
+    <title>Add Product To Cart</title>
+
+</head>
+<body>
+
+    <form th:object="${product}" th:action="@{/product/addNewProduct}" method="post">
+
+        <label>Enter The Product Name</label>
+        <br>
+        <input type="text" th:filed="*{productName}">
+        <br><br>
+
+        <label>Enter The Product Category</label>
+        <br>
+        <input type="text" th:filed="*{productCategory}">
+        <br><br>
+
+        <label>Enter The Product Sub Category</label>
+        <br>
+        <input type="text" th:filed="*{subCategory}">
+        <br><br>
+
+        <label>Enter The Product Qty</label>
+        <br>
+        <input type="text" th:filed="*{productQty}">
+        <br><br>
+
+        <label>Enter The Product Price</label>
+        <br>
+        <input type="text" th:filed="*{productPrice}">
+        <br><br>
+
+        <label>Enter The Product Discounted Price</label>
+        <br>
+        <input type="text" th:filed="*{discountedPrice}">
+        <br><br>
+
+        <input type="submit" value="ADD PRODUCT">
+
+    </form>
+
+</body>
+</html>

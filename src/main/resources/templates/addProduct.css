@@ -1,0 +1,31 @@
+
+  *{
+  background:lightpink;
+  }
+    .tab{
+    background-color:goldenrod;
+    }
+    .btnp{
+      height:40px;
+      width:61px;
+      background:orange;
+      color:white;
+      border-radius:13px;
+      transition:ease 0.2s;
+    }
+    .btnp:hover{
+      transform:scale(1.07);
+      background:red;
+      color:white;
+    }
+    .btnp2{
+      border-radius:8px;
+      background-color:darkred;
+      color:white;
+      transition:ease 0.2s;
+    }
+    .btnp2:hover{
+      transform:scale(1.04);
+      background:red;
+      color:white;
+   }

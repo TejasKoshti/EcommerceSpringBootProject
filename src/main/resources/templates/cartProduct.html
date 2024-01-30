@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Store</title>
+    <style>
+    *{
+        background:lightpink;
+    }
+        .cartTab{
+            background-color:goldenrod;
+            border-radius:10px;
+        }
+        .btnc{
+            height:26px;
+            width:28px;
+            border-radius:10px;
+            background-color:darkred;
+            color:white;
+            padding:5px
+            transition:ease 0.2s;
+        }
+        .btnc:hover{
+            transform:scale(1.06);
+            background:red;
+        }
+        .btnc2{
+            height:35px;
+            width:80px;
+            border-radius:10px;
+            background-color:orange;
+            color:white;
+            transition:ease 0.2s;
+        }
+        .btnc2:hover{
+            transform:scale(1.08);
+            background:red;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <a th:href="@{/product/display}"><button class="btnc2">Home🏠</button></a>
+</div>
+<div align="center">
+    <table cellspacing="15px" border="1px solid black" style="text-align:center" class="cartTab">
+        <tr>
+            <th>Cart Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Discounted Price</th>
+            <th>Product Quantity</th>
+            <th>Qty</th>
+        </tr>
+
+        <tr th:each="data:${cartList}">
+            <td th:text="${dataStat.index+1}"></td>
+            <td th:text="${data.productName}"></td>
+            <td th:text="${data.productPrice} "></td>
+            <td th:text="${data.productDiscountedPrice}"></td>
+            <td th:text="${data.productQty}"></td>
+            <td>
+                <a th:href="@{/cart/increaseProductToCart/{id}(id=${data.productId})}"><button class="btnc">+</button></a>
+                <b><span th:text="${data.tempQty}"></span></b>
+                <a th:href="@{/cart/decreaseProductToCart/{id}(id=${data.productId})}"><button class="btnc">-</button></a>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
